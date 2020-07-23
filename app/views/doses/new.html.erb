@@ -1,0 +1,10 @@
+<div class="container">
+
+<%# Agregar Cocktails %>
+<%= simple_form_for [ @cocktail, @dose] do |t| %>
+  <%= t.input :description %>
+  <%= t.association :ingredient %>
+  <%= t.submit class: "btn btn-dark" %>
+<% end %>
+
+</div>

@@ -1,0 +1,30 @@
+<div class="container">
+<%#VOLVER AL INICIOO  %>
+<%= link_to "Inicio",  cocktails_path, class: "btn btn-outline-dark mt-3 mb-3" %>
+
+<%# agregar doseses %>
+<%= link_to "Agregar medidas",  new_cocktail_dose_path(@cocktail), class:"btn btn-outline-dark mt-3 mb-3" %>
+
+
+<%# INTENTO DE CARD %>
+<div class="card mb-3 mx-auto" style="max-width: 1000px;">
+  <div class="row no-gutters">
+    <div class="col-md-6">
+      <%= image_tag "https://i.ytimg.com/vi/-VDOoCuQrUo/maxresdefault.jpg", class: "img-fluid" %>
+    </div>
+    <div class="col-md-6">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <ul class="list-group">
+          <% @cocktail.doses.each do |dose| %>
+            <li class="list-group-item">
+            <%= dose.description  %>
+            <strong> <%= dose.ingredient.name  %> </strong>
+            <%= link_to "Delete", cocktail_dose_path(@cocktail, dose), method: :delete, class:"btn btn-danger btn-sm ml-4" %> </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+

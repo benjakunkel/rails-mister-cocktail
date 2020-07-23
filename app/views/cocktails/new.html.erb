@@ -1,0 +1,14 @@
+
+<div class="container">
+
+<%# VOLVER AL INICOO %>
+  <%= link_to "Inicio",  cocktails_path, class: "btn btn-outline-dark mt-3 mb-3 " %>
+
+  <%# FORMULARIO %>
+  <div class="form-group text-center">
+    <%= simple_form_for @cocktail do |f| %>
+      <%= f.input :name,  :label => "Ingresa tu trago:", placeholder:"Ingresar nombre del trago", class:"saraza" %>
+      <%= f.submit "Crear Trago", class:"btn btn-dark" %>
+    <% end %>
+  </div>
+</div>
