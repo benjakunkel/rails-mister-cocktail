@@ -6,7 +6,7 @@
   <div class="search-form-control form-group mt-4">
     <input class="form-control string required" type="text" name="" id="" />
     <button name="button" type="submit" class="btn btn-flat">
-      <i class="fas fa-search"></i> Buscar Trago
+      <i class="fas fa-search"></i> Buscar pack
     </button>
   </div>
   </form>
@@ -16,7 +16,7 @@
   
   
   <%# AGREGAR Bebida %>
-  <%= link_to "Agregar trago",  new_cocktail_path, class: "btn btn-outline-dark " %>
+  <%= link_to "Agregar pack",  new_cocktail_path, class: "btn btn-outline-dark " %>
 
   <%# IMAGEN PRINCIPAL %>
   <%= image_tag "https://i.pinimg.com/originals/fe/50/ea/fe50ea2c098f4560ba6c2a3e897c9d30.png", class: "img-fluid mx-auto d-block" %>
@@ -33,9 +33,9 @@
         </div>
         <div class="card-footer">
           <%# MAS INFO %>
-          <%= link_to "Mas info", cocktail_path(cocktail["id"]), class: "btn btn-outline-dark" %>
+          <%= link_to "Ver mas", cocktail_path(cocktail["id"]), class: "btn btn-outline-dark" %>
           <%# DELETE %>
-          <%= link_to "Delete", cocktail_path(cocktail["id"]), method: :delete , class: "btn btn-outline-danger" %>
+          <%= link_to "Borrar", cocktail_path(cocktail["id"]), method: :delete , class: "btn btn-outline-danger" %>
         </div>
       </div>
     <% end %>
