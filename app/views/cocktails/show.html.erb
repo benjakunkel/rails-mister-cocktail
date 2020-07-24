@@ -4,8 +4,8 @@
 
   <%# agregar doseses %>
   <%= link_to "Agregar producto al pack",  new_cocktail_dose_path(@cocktail), class:"btn btn-outline-dark mt-3 mb-3" %>
-
-
+<%# ADD REVIEW %>
+  <%= link_to 'Agregar review', new_cocktail_review_path(@cocktail), class: "btn btn-outline-dark m-2" %>
   <%# INTENTO DE CARD %>
     <div class="card mb-3 mx-auto" style="max-width: 1000px;">
       <div class="row no-gutters">
@@ -27,7 +27,12 @@
         </div>
       </div>
 </div>
-<div class="reviews text-center">
+<div class="reviews">
   <h2 id="reviews">Reviews</h2>
+  <ul class="nada">
+  <% @cocktail.reviews.each do |review| %>
+    <li class="list-group-item review-item"><%="⭐"*review.rating %>  <%= review.content %></li>
+  <% end %>
+</ul>
   </div>
 
