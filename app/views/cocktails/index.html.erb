@@ -28,7 +28,7 @@
     <% @cocktails.each do |cocktail| %>
       <div class="col-md-3 my-3">
         <div class="card-img-top">
-           <%= cl_image_tag cocktail.photo.key, height: 300, width: 300, crop: :fill, class: "img-fluid" %>
+          
           <h4><%= cocktail["name"] %></h4>
         </div>
         
