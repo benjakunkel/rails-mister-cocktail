@@ -19,18 +19,20 @@
   <%= link_to "Agregar pack",  new_cocktail_path, class: "btn btn-outline-dark " %>
 
   <%# IMAGEN PRINCIPAL %>
-  <%= image_tag "https://i.pinimg.com/originals/fe/50/ea/fe50ea2c098f4560ba6c2a3e897c9d30.png", class: "img-fluid mx-auto d-block" %>
-  
+  <%= cl_image_tag "https://i.pinimg.com/originals/fe/50/ea/fe50ea2c098f4560ba6c2a3e897c9d30.png", class: "img-fluid mx-auto d-block" %>
   
   <%# TODOS LOS TRAGOS %>
+  
   <h6>All <%= @cocktails.count %> cocktails</h6>
   <div class="row">
+    
     <% @cocktails.each do |cocktail| %>
       <div class="col-md-3 my-3">
         <div class="card-img-top">
-          <%= image_tag "https://lalicorera.com/img/products/Jagermeister-mini-.png", class: "img-fluid" %>
-          <h3><%= cocktail["name"] %></h3>
+           <%= cl_image_tag cocktail.photo.key, height: 300, width: 300, crop: :fill, class: "img-fluid" %>
+          <h4><%= cocktail["name"] %></h4>
         </div>
+        
         <div class="card-footer">
           <%# MAS INFO %>
           <%= link_to "Ver mas", cocktail_path(cocktail["id"]), class: "btn btn-outline-dark" %>
@@ -41,7 +43,6 @@
     <% end %>
   </div>
   
-
   <%# FOOTER %>
   <div class="footer">
   <div class="footer-links">
